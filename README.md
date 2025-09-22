@@ -12,36 +12,6 @@ This project demonstrates the application of **deep learning for vision-language
 - **Size:** ~1 GB.  
 - **Source:** [Flickr8k on Kaggle](https://www.kaggle.com/datasets/adityajn105/flickr8k)
 
-**Dataset Structure**
-data/
-├── Flickr8k_images/ # Original images
-├── Flickr8k_text/ # Captions and vocabulary files
-
-
----
-
-## Project Structure
-multimodal-image-captioning-cnn/
-│── data/
-│── notebooks/
-│ ├── 1_data_preprocessing.ipynb
-│ ├── 2_feature_extraction.ipynb
-│ ├── 3_model_training.ipynb
-│ ├── 4_evaluation.ipynb
-│ └── 5_demo_inference.ipynb
-│── models/
-│ ├── encoder.pth
-│ ├── decoder.pth
-│── app/
-│ └── streamlit_app.py
-│── utils/
-│ ├── data_loader.py
-│ ├── preprocessing.py
-│ ├── evaluation.py
-│── README.md
-│── requirements.txt
-
-
 ---
 
 ## Model Architecture
