@@ -1,56 +1,54 @@
-# Multimodal Image Captioning-CNN
+# Multimodal-Image-Captioning-CNN
 
 ## Overview
-This project implements a **multimodal image captioning system** using **PyTorch**, combining computer vision and natural language processing. The system generates textual descriptions (captions) for images by extracting visual features with a CNN encoder and generating captions with an LSTM or Transformer decoder.
-
-This project demonstrates the application of **deep learning for vision-language tasks**, making it suitable for research-oriented MSc applications in **Machine Learning, Computer Vision, and Data Science**.
+This project implements a **multimodal image captioning system** using **PyTorch**, combining computer vision and natural language processing. The system generates textual descriptions (captions) for images by extracting visual features with a **CNN encoder** and generating captions with an **LSTM decoder**.  
 
 ---
 
 ## Dataset
-- **Flickr8k Dataset**: 8,000 images, each with 5 captions (≈40,000 captions total).  
-- **Size:** ~1 GB.  
-- **Source:** [Flickr8k on Kaggle](https://www.kaggle.com/datasets/adityajn105/flickr8k)
+- **Flickr8k Dataset:** 8,000 images, each with 5 captions (≈40,000 captions total).  
+- **Size:** ~1 GB  
+- **Structure:**
+
+
 
 ---
 
 ## Model Architecture
-1. **Encoder (CNN):**  
-   - Pretrained CNN (ResNet50, InceptionV3, or EfficientNet) extracts feature embeddings from images.  
-   - Image embeddings are saved to speed up training.
+1. **CNN Encoder:**  
+   - Pretrained CNN (ResNet50 or EfficientNet) extracts image embeddings.  
 
-2. **Decoder (Text Generator):**  
-   - LSTM-based decoder generates captions word by word.  
-   - Optional Transformer decoder can replace LSTM for research-level experimentation.  
+2. **LSTM Decoder:**  
+   - Generates captions word by word.  
+   - Uses attention mechanism for better image-text alignment.  
 
-3. **Training:**  
-   - Loss function: CrossEntropyLoss  
-   - Optimizer: Adam  
-   - Batch size: 32  
-   - Training: Colab GPU (20 epochs recommended)  
+3. **Advanced Features:**  
+   - Beam search for better caption generation.  
+   - Teacher forcing during training.  
+   - BLEU score evaluation for captions.  
+
+---
+
+## Training
+- **Framework:** PyTorch  
+- **Loss:** CrossEntropyLoss  
+- **Optimizer:** Adam  
+- **Batch size:** 32  
+- **Device:** GPU recommended (Colab or similar)  
+- **Epochs:** 20+  
 
 ---
 
 ## Evaluation
-- **Metrics:**  
-  - BLEU score (1-4)  
-  - METEOR  
-  - CIDEr (optional)
-
-- **Visualization:** Sample images with predicted captions shown alongside ground truth.
-
----
-
-## Demo / Deployment
-- **Streamlit app:** Users can upload an image and receive a generated caption.  
-- **Notebook demo:** Run inference on sample images from the dataset.
+- BLEU scores (1-4)  
+- Sample predictions displayed alongside ground truth captions.  
 
 ---
 
 ## Future Work
-- Extend decoder to **Transformer-based model** for improved performance.  
-- Use **Flickr30k or MS-COCO** for larger-scale experiments.  
-- Apply **Vision Transformer (ViT) encoder** for state-of-the-art image representations.
+- Replace LSTM with Transformer decoder for improved performance.  
+- Use Vision Transformer (ViT) encoder for state-of-the-art image representation.  
+- Scale to larger datasets (Flickr30k, MS-COCO) for better generalization.
 
 ---
 
@@ -63,5 +61,4 @@ numpy
 pandas
 matplotlib
 Pillow
-streamlit
 tqdm
